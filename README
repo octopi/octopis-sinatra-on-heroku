@@ -1,10 +1,12 @@
 Forked from scottmotte's [sinatra-heroku-cedar-template](https://github.com/scottmotte/sinatra-heroku-cedar-template). This setup includes support for erb views and MongoDB. 
 
 ## MongoDB
-Locally, `mongod` must be running on port 27017 by default. The sample code connects to the `test` database with a `testCollection`. 
+Locally, `mongod` must be running on port 27017 by default. The sample code connects to the `test` local database with a `testCollection`.
 
 On Heroku, this is equipped to us MongoLab. Use:
 
     heroku addons:add mongolab:sandbox
 
-If your application doesn't require a database, you can remove all references to MongoDB. 
+To work with the supplied code, a `testCollection` needs to exist with one document that has `{"foo": "bar"}`.
+
+If your application doesn't require a database, you can remove all references to MongoDB.
