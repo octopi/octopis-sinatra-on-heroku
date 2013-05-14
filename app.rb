@@ -1,6 +1,8 @@
 include Mongo
 
-mongo = MongoClient.new('localhost', 27017)
+mongo_uri = ENV['MONGOLAB_URI'] || 'mongodb://localhost:27017'
+
+mongo = MongoClient.from_uri(mongo_uri)
 
 get '/' do
 	# mongodb usage -- see README for proper db setup
